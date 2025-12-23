@@ -86,7 +86,7 @@ export default function Certificates() {
                 </DialogTrigger>
                 <DialogContent className="max-w-3xl">
                   <div className="space-y-4">
-                   
+                   <img src={cert.image || "/placeholder.svg"} alt={cert.title} className="w-full rounded-lg" />
                     <div>
                       <h3 className="text-2xl font-bold mb-2">{cert.title}</h3>
                       <p className="text-muted-foreground">
