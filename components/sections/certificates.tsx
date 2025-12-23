@@ -10,7 +10,7 @@ const certificates = [
     title: "Complete basic python",
     issuer: "Digilabs",
     date: "2024",
-    image: "/aws-certificate.png",
+    //image: "/aws-certificate.png",
   },
   {
     title: "Technical events",
