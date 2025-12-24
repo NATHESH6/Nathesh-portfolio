@@ -1,24 +1,25 @@
 import { useEffect, useState } from "react";
 
 const ScrollToTop = () => {
-  const [visible, setVisible] = useState(false);
+  const [show, setShow] = useState(false);
 
-  // Show button after scrolling down
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setVisible(true);
+    const onScroll = () => {
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+
+      if (scrollTop > 200) {
+        setShow(true);
       } else {
-        setVisible(false);
+        setShow(false);
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll smoothly to top
-  const scrollToTop = () => {
+  const goTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -26,31 +27,33 @@ const ScrollToTop = () => {
   };
 
   return (
-    <>
-      {visible && (
-        <button onClick={scrollToTop} style={styles.button}>
-          ↑
-        </button>
+    <div>
+      {show && (
+        <div onClick={goTop} style={styles.arrow}>
+          ⬆
+        </div>
       )}
-    </>
+    </div>
   );
 };
 
 const styles = {
-  button: {
+  arrow: {
     position: "fixed",
-    bottom: "30px",
-    right: "30px",
-    height: "50px",
+    bottom: "25px",
+    right: "25px",
     width: "50px",
-    borderRadius: "50%",
-    border: "none",
-    backgroundColor: "#0ef",
+    height: "50px",
+    backgroundColor: "#00ffff",
     color: "#000",
-    fontSize: "24px",
+    fontSize: "28px",
+    borderRadius: "50%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     cursor: "pointer",
-    boxShadow: "0 0 15px rgba(0, 238, 255, 0.7)",
-    zIndex: 1000,
+    zIndex: 9999,
+    boxShadow: "0 0 15px rgba(0,255,255,0.8)",
   },
 };
 
