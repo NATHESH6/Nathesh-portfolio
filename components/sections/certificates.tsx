@@ -22,7 +22,7 @@ const certificates = [
     title: "Fundamentals of deep learning",
     issuer: "Nvida",
     date: "2024",
-    image: "/Screenshot 2025-12-24 081923",
+    image: "/Screenshot 2025-12-24 081923.png",
   },
   {
     title: "Service technician",
