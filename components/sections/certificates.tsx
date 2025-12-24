@@ -22,7 +22,7 @@ const certificates = [
     title: "Fundamentals of deep learning",
     issuer: "Nvida",
     date: "2024",
-    image: "/react-certificate.jpg",
+    image: "/Screenshot 2025-12-24 081923",
   },
   {
     title: "Service technician",
@@ -34,13 +34,13 @@ const certificates = [
     title: "Soft Skills Enrichment program by IBMers Govindon G & Prajesh Jayaraman",
     issuer: "IBM",
     date: "2024",
-    image: "/3d-graphics-certificate.jpg",
+    image: "/Screenshot 2025-12-24 082010.png",
   },
   {
     title: "Web Development using PHP Programming and MySQL",
     issuer: "Infosys",
     date: "2025",
-    image: "/typescript-certificate.jpg",
+    image: "/Screenshot 2025-12-24 082027.png",
   },
 ]
 
