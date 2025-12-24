@@ -21,7 +21,7 @@ const getIconUrl = (iconName: string) => {
     mysql: "https://cdn.simpleicons.org/mysql/4479A1",
     vscode: "/vscode-logo.jpg",
     microsoftoffice: "/ms-office-logo.jpg",
-    canva: "https://cdn.simpleicons.org/canva/00C4CC",
+    canva: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFSAPZqzReNHPlULGZRRRpH5c8vAyNcunJPQ&s",
     virtualbox: "https://cdn.simpleicons.org/virtualbox/183A61",
     hardware: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqIYaq3MSCGF5M7A0MQaqNmmx81X5VbHIRvA&s",
   }
