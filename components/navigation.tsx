@@ -29,18 +29,22 @@ export default function Navigation() {
   }, [])
 
   const scrollToSection = (href: string) => {
+     setIsOpen(false)//close mobile menu first
+    
+   setTimeout(() => {
     const element = document.querySelector(href)
-    if (element) {
-      const offset = 80
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.scrollY - offset
+    if (!element) return
+
+    const offset = 80
+    const elementPosition =
+      element.getBoundingClientRect().top + window.pageYOffset
 
       window.scrollTo({
-        top: offsetPosition,
+        top: elementposition - offset,
         behavior: "smooth",
       })
-      setIsOpen(false)
-    }
+     
+    },300)//wait for mobile menu animation
   }
 
   return (
