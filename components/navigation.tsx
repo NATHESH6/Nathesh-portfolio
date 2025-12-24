@@ -21,6 +21,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("")
   const navRef = useRef<HTMLElement>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,6 +63,27 @@ export default function Navigation() {
       setIsOpen(false)
     }
   }
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current && 
+        !menuRef.current.contains(event.target as Node) &&
+        !(event.target as Element).closest('button[aria-label*="menu"]')
+      ) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    }
+    
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isOpen])
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -143,19 +165,20 @@ export default function Navigation() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 md:hidden z-40 mt-[60px]"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden z-40"
               onClick={() => setIsOpen(false)}
             />
             
-            {/* Mobile menu */}
+            {/* Mobile menu - placed above backdrop */}
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              ref={menuRef}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border absolute top-full left-0 right-0 z-50 overflow-hidden shadow-xl"
             >
               <div className="container mx-auto px-4 py-3 flex flex-col gap-1">
-                {navItems.map((item) => (
+                {navItems.map((item, index) => (
                   <motion.button
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
@@ -168,6 +191,7 @@ export default function Navigation() {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: -20, opacity: 0 }}
+                    transition={{ delay: index * 0.05 }}
                   >
                     {item.label}
                   </motion.button>
