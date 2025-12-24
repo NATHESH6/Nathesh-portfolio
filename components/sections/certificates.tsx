@@ -10,13 +10,13 @@ const certificates = [
     title: "Complete basic python",
     issuer: "Digilabs",
     date: "2024",
-    image: "/aws-certificate.png",
+    image: "/Compleate basic python.png",
   },
   {
     title: "Technical events",
     issuer: "Karpagam college of engineering",
     date: "2024",
-    image: "/google-cloud-certificate.jpg",
+    image: "/Technical events.jpg",
   },
   {
     title: "Fundamentals of deep learning",
@@ -28,7 +28,7 @@ const certificates = [
     title: "Service technician",
     issuer: "Kongu polytechnic college",
     date: "2023",
-    image: "/web-development-certificate.jpg",
+    image: "/IMG_20251205_155650.jpg",
   },
   {
     title: "Soft Skills Enrichment program by IBMers Govindon G & Prajesh Jayaraman",
