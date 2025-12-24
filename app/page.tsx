@@ -7,6 +7,18 @@ import Certificates from "@/components/sections/certificates"
 import Contact from "@/components/sections/contact"
 import Navigation from "@/components/navigation"
 import ParticlesBackground from "@/components/particles-background"
+import ScrollToTop from "./component/ScrollToTop";
+
+function App() {
+  return (
+    <>
+      {/* BIG CONTENT REQUIRED */}
+      <ScrollToTop />
+    </>
+  );
+}
+
+export default App;
 
 export default function Home() {
   return (
