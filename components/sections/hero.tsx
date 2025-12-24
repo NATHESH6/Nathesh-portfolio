@@ -139,7 +139,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl animate-glow" />
             <div className="relative w-[250px] h-[350px] md:w-[300px] md:h-[400px] lg:w-[400px] lg:h-[500px] rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/20">
               <Image
-                src="/professional-developer-portrait.png"
+                src="/photo_2025-12-23_16-00-44.jpg"
                 alt="Profile"
                 width={300}
                 height={400}
