@@ -54,7 +54,15 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="space-y-2 text-center lg:text-left"
           >
-             <span className="text-sm text-cyan-600 dark:text-cyan-400">Available for Internship</span>
+             <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10"
+          >
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-sm text-cyan-600 dark:text-cyan-400">Available for Internship</span>
+          </motion.div>
             <p className="text-primary text-sm md:text-base font-mono">{"< Nathesh Venkateswaran />"}</p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance">
               <span className="bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
