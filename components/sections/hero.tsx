@@ -54,6 +54,7 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="space-y-2 text-center lg:text-left"
           >
+             <span className="text-sm text-cyan-600 dark:text-cyan-400">Available for Internship</span>
             <p className="text-primary text-sm md:text-base font-mono">{"< Nathesh Venkateswaran />"}</p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance">
               <span className="bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
