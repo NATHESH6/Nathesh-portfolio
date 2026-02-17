@@ -46,7 +46,7 @@ const certificates = [
     title: "Full Stack Development",
     issuer: "NoviTech R&D Private Limited",
     date: "December 30th to January 30th 2025-2026 ",
-    image: "/NATHESH PV full-stack.pdf",
+    image: "/Screenshot 2026-02-17 112022.png",
   },
 ]
 
