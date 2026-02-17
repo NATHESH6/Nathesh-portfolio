@@ -42,6 +42,12 @@ const certificates = [
     date: "2025",
     image: "/Screenshot 2025-12-24 082027.png",
   },
+  {
+    title: "Full Stack Development",
+    issuer: "NoviTech R&D Private Limited",
+    date: "December 30th to January 30th 2025-2026 ",
+    image: "/Compleate basic python.png",
+  },
 ]
 
 export default function Certificates() {
