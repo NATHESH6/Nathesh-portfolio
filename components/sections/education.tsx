@@ -39,9 +39,9 @@ const education = [
 ]
 
 const stats = [
-  { value: "91%", label: "Diploma Grade", color: "purple" },
-  { value: "62%", label: "SSLC Percentage", color: "cyan" },
   { value: "6.48", label: "Current CGPA", color: "pink" },
+  { value: "91%", label: "Diploma Grade", color: "red" },
+  { value: "62.8%", label: "SSLC Percentage", color: " purple" }
 ]
 
 export default function Education() {
