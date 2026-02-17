@@ -1,31 +1,55 @@
-"use client"
-
 import type React from "react"
-
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitError(null)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      // Replace these with your actual EmailJS credentials
+      const result = await emailjs.sendForm(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        form.current!,
+        {
+          publicKey: 'YOUR_PUBLIC_KEY', // Replace with your EmailJS public key
+        }
+      )
 
-    setIsSubmitting(false)
-    setSubmitted(true)
-
-    setTimeout(() => setSubmitted(false), 3000)
+      console.log('SUCCESS!', result.text)
+      setSubmitted(true)
+      
+      // Reset form
+      e.currentTarget.reset()
+      
+      // Show success message for 3 seconds
+      setTimeout(() => setSubmitted(false), 3000)
+      
+    } catch (error: any) {
+      console.log('FAILED...', error.text)
+      setSubmitError(error.text || 'Failed to send message. Please try again.')
+      
+      // Clear error after 5 seconds
+      setTimeout(() => setSubmitError(null), 5000)
+      
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -97,18 +121,45 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <Input type="text" placeholder="Your Name" required className="bg-secondary border-border" />
-                <Input type="email" placeholder="Your Email" required className="bg-secondary border-border" />
+                <Input 
+                  type="text" 
+                  name="user_name"
+                  placeholder="Your Name" 
+                  required 
+                  className="bg-secondary border-border" 
+                />
+                <Input 
+                  type="email" 
+                  name="user_email"
+                  placeholder="Your Email" 
+                  required 
+                  className="bg-secondary border-border" 
+                />
               </div>
-              <Input type="text" placeholder="Subject" required className="bg-secondary border-border" />
+              <Input 
+                type="text" 
+                name="subject"
+                placeholder="Subject" 
+                required 
+                className="bg-secondary border-border" 
+              />
               <Textarea
+                name="message"
                 placeholder="Your Message"
                 required
                 rows={6}
                 className="bg-secondary border-border resize-none"
               />
+              
+              {/* Error Message */}
+              {submitError && (
+                <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-500 text-sm">
+                  {submitError}
+                </div>
+              )}
+              
               <Button
                 type="submit"
                 size="lg"
