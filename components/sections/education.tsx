@@ -7,7 +7,7 @@ import { GraduationCap, Award, BookOpen } from "lucide-react"
 const education = [
   {
     degree: "Bachelor of Engineering",
-    field: "Computer Science And Engineering",
+    field: "Computer Science  And Engineering",
     institution: "Coimbatore Institute of Engineering and Technology",
     period: "2023 - 2026",
     status: "Currently Pursuing",
