@@ -20,8 +20,8 @@ export default function Scene3D() {
     container.appendChild(canvas)
 
     const resize = () => {
-      canvas.width = container.clientWidth
-      canvas.height = container.clientHeight
+         canvas.width = container.offsetWidth || window.innerWidth
+           canvas.height = container.offsetHeight || window.innerHeight
     }
     resize()
     window.addEventListener("resize", resize)
