@@ -114,5 +114,5 @@ export default function Scene3D() {
     }
   }, [])
 
-  return <div ref={containerRef} className="w-full h-full" />
+  return <div ref={containerRef} className="w-full min-h-full" />
 }
