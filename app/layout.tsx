@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     apple: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUf136l_VcrgXOPhmq0ehnJyg-2Bi5KDozMw&s",
   },
 }
-/*export const viewport = {
+export const viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-}*/
+}
 export default function RootLayout({
   children,
 }: Readonly<{
