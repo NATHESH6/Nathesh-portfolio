@@ -259,3 +259,16 @@
 .animate-morph-blob {
   animation: morphBlob 10s ease-in-out infinite;
 }
+/* Fix iOS height issues */
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+#__next {
+  min-height: 100vh;
+}
