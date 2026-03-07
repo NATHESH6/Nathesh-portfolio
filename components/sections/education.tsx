@@ -32,7 +32,7 @@ const education = [
     institution: "Sri Sakthi Supreme Ideal Vikas Matric HR Sec School",
     period: "Completed 2020",
     status: "Completed",
-    percentage: "62.8%",
+    percentage: "62%",
     icon: BookOpen,
     color: "orange",
   },
@@ -41,7 +41,7 @@ const education = [
 const stats = [
   { value: "6.48", label: "Current CGPA", color: "pink" },
   { value: "91%", label: "Diploma Grade", color: "purple" },
-  { value: "62.8%", label: "SSLC Percentage", color: "cyan" }
+  { value: "62%", label: "SSLC Percentage", color: "cyan" }
 ]
 
 export default function Education() {
