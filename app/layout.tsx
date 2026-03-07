@@ -19,46 +19,36 @@ export const metadata: Metadata = {
   description:
     "A highly interactive, visually rich personal portfolio website showcasing projects, skills, and experience",
   generator: "v0.app",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: "cover",
-  },
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUf136l_VcrgXOPhmq0ehnJyg-2Bi5KDozMw&s",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUf136l_VcrgXOPhmq0ehnJyg-2Bi5KDozMw&s",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUf136l_VcrgXOPhmq0ehnJyg-2Bi5KDozMw&s",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUf136l_VcrgXOPhmq0ehnJyg-2Bi5KDozMw&s",
   },
 }
-
+export const viewport = ({
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+})
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Nathesh Portfolio" />
-        <meta name="theme-color" content="#12100d" />
-        <meta name="format-detection" content="telephone=no" />
-      </head>
+    <html lang="en">
       <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
