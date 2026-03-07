@@ -163,10 +163,12 @@
   100% {
     opacity: 0.3;
     filter: blur(120px);
+    -webkit-filter: blur(120px);
   }
   50% {
     opacity: 0.7;
     filter: blur(160px);
+    -webkit-filter: blur(160px);
   }
 }
 
@@ -191,12 +193,15 @@
 @keyframes rotate3d {
   0% {
     transform: rotateY(0deg) rotateX(0deg);
+    -webkit-transform: rotateY(0deg) rotateX(0deg);
   }
   50% {
     transform: rotateY(180deg) rotateX(10deg);
+    -webkit-transform: rotateY(180deg) rotateX(10deg);
   }
   100% {
     transform: rotateY(360deg) rotateX(0deg);
+    -webkit-transform: rotateY(360deg) rotateX(0deg);
   }
 }
 
@@ -258,17 +263,4 @@
 
 .animate-morph-blob {
   animation: morphBlob 10s ease-in-out infinite;
-}
-/* Fix iOS height issues */
-html, body {
-  height: 100%;
-}
-
-body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-}
-
-#__next {
-  min-height: 100vh;
 }
