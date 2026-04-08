@@ -14,7 +14,7 @@ interface SkillCardProps {
 const getIconUrl = (iconName: string) => {
   const iconMap: Record<string, string> = {
     html5: "https://cdn.simpleicons.org/html5/E34F26",
-    css3: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/external-cascading-style-sheets-language-used-for-describing-the-presentation-of-a-document-logo-shadow-tal-revivo.png",
+    css3: "/css3-logo.jpg",
     javascript: "https://cdn.simpleicons.org/javascript/F7DF1E",
     python: "https://cdn.simpleicons.org/python/3776AB",
     java: "/java-logo.png",
