@@ -32,7 +32,12 @@ export default function Contact() {
 const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    await new Promise((resolve) => setTimeout(resolve, 1500))
 
+    setIsSubmitting(false)
+    setSubmitted(true)
+
+    setTimeout(() => setSubmitted(false), 3000)
     if (!form.current) return
 
     emailjs
