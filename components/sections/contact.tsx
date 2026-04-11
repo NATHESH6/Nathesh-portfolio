@@ -28,16 +28,7 @@ export default function Contact() {
     setSubmitted(true)
 
     setTimeout(() => setSubmitted(false), 3000)
-  }
-const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsSubmitting(false)
-    setSubmitted(true)
-
-    setTimeout(() => setSubmitted(false), 3000)
+    
     if (!form.current) return
 
     emailjs
@@ -61,6 +52,7 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         }
       )
   }
+
 
 
   return (
@@ -132,7 +124,7 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form ref={form} onSubmit={sendEmail} className="space-y-4">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <Input type="text" placeholder="Your Name"name="name" required className="bg-secondary border-border n " />
                 <Input type="email" placeholder="Your Email" name="email" required className="bg-secondary border-border" />
