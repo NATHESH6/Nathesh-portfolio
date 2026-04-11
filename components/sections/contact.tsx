@@ -134,12 +134,12 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
           >
             <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <Input type="text" placeholder="Your Name" required className="bg-secondary border-border" />
-                <Input type="email" placeholder="Your Email" required className="bg-secondary border-border" />
+                <Input type="text" placeholder="Your Name"name="name" required className="bg-secondary border-border n " />
+                <Input type="email" placeholder="Your Email" name="email" required className="bg-secondary border-border" />
               </div>
-              <Input type="text" placeholder="Subject" required className="bg-secondary border-border" />
+              <Input type="text" placeholder="Subject" name="title" required className="bg-secondary border-border" />
               <Textarea
-                placeholder="Your Message"
+                placeholder="Your Message" name="message"
                 required
                 rows={6}
                 className="bg-secondary border-border resize-none"
