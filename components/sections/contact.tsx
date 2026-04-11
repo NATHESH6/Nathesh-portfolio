@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-import React, { useRef, useState } from "react"
+import { useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
 import { motion, useInView } from "framer-motion"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
