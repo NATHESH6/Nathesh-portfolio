@@ -29,7 +29,7 @@ export default function Contact() {
 
     setTimeout(() => setSubmitted(false), 3000)
   }
-const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     await new Promise((resolve) => setTimeout(resolve, 1500))
