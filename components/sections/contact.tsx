@@ -16,38 +16,28 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsSubmitting(false)
-    setSubmitted(true)
-
-    setTimeout(() => setSubmitted(false), 3000)
-    
     if (!form.current) return
 
-    emailjs
-      .sendForm(
-        "service_kz5puxy",     // 🔴 replace servicre ID
-        "template_cg0ev05",    // 🔴 replace template ID
-        form.current,
-        "gEan7KbJpxBXTPIXe"      // 🔴 replace bublic key
-      )
-      .then(
-        () => {
-          setIsSubmitting(false)
-          setSubmitted(true)
-          form.current?.reset()
+    setIsSubmitting(true)
+    setSubmitted(false)
 
-          setTimeout(() => setSubmitted(false), 3000)
-        },
-        (error) => {
-          console.log("FAILED...", error.text)
-          setIsSubmitting(false)
-        }
+    try {
+      await emailjs.sendForm(
+        "service_kz5puxy",
+        "template_cg0ev05",
+        form.current,
+        "gEan7KbJpxBXTPIXe"
       )
+
+      setSubmitted(true)
+      form.current.reset()
+      setTimeout(() => setSubmitted(false), 3000)
+    } catch (error) {
+      console.error("EmailJS failed:", error)
+      // Optionally show an error toast/message here
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
 
