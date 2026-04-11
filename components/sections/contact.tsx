@@ -42,8 +42,8 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",     // 🔴 replace
-        "YOUR_TEMPLATE_ID",    // 🔴 replace
+        "service_kz5puxy",     // 🔴 replace
+        "template_cg0ev05",    // 🔴 replace
         form.current,
         "YOUR_PUBLIC_KEY"      // 🔴 replace
       )
