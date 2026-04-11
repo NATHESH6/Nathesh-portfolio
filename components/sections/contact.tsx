@@ -7,9 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
-
-
-
 export default function Contact() {
   const ref = useRef(null)
   const form = useRef<HTMLFormElement>(null)
