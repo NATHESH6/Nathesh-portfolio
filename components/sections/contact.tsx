@@ -1,5 +1,4 @@
 "use client"
-
 import { useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
 import { motion, useInView } from "framer-motion"
@@ -13,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function Contact() {
   const ref = useRef(null)
+  const form = useRef<HTMLFormElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -29,6 +29,34 @@ export default function Contact() {
 
     setTimeout(() => setSubmitted(false), 3000)
   }
+const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    if (!form.current) return
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",     // 🔴 replace
+        "YOUR_TEMPLATE_ID",    // 🔴 replace
+        form.current,
+        "YOUR_PUBLIC_KEY"      // 🔴 replace
+      )
+      .then(
+        () => {
+          setIsSubmitting(false)
+          setSubmitted(true)
+          form.current?.reset()
+
+          setTimeout(() => setSubmitted(false), 3000)
+        },
+        (error) => {
+          console.log("FAILED...", error.text)
+          setIsSubmitting(false)
+        }
+      )
+  }
+
 
   return (
     <section id="contact" className="relative py-20 md:py-32" ref={ref}>
@@ -99,7 +127,7 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <Input type="text" placeholder="Your Name" required className="bg-secondary border-border" />
                 <Input type="email" placeholder="Your Email" required className="bg-secondary border-border" />
