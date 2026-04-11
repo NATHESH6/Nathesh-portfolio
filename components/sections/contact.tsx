@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, useState } from "react"
+import React, { useRef, useState, FormEvent } from "react"
 import emailjs from "@emailjs/browser"
 import { motion, useInView } from "framer-motion"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
@@ -10,15 +10,20 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function Contact() {
   const ref = useRef(null)
-  const form = useRef()
+  const form = useRef<HTMLFormElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+
+    if (!form.current) {
+      setIsSubmitting(false)
+      return
+    }
 
     emailjs
       .sendForm(
@@ -31,7 +36,7 @@ export default function Contact() {
         () => {
           setIsSubmitting(false)
           setSubmitted(true)
-          form.current.reset()
+          form.current?.reset()
 
           setTimeout(() => setSubmitted(false), 3000)
         },
