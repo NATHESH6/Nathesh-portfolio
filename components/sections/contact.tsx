@@ -45,7 +45,7 @@ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         "service_kz5puxy",     // 🔴 replace
         "template_cg0ev05",    // 🔴 replace
         form.current,
-        "YOUR_PUBLIC_KEY"      // 🔴 replace
+        "https://api.emailjs.com/api/v1.0/email/send"      // 🔴 replace
       )
       .then(
         () => {
