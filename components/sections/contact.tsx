@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
 import { motion, useInView } from "framer-motion"
@@ -7,131 +8,117 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
-
-
-
 export default function Contact() {
   const ref = useRef(null)
+  const form = useRef()
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = (e) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",     // 🔴 replace
+        "YOUR_TEMPLATE_ID",    // 🔴 replace
+        form.current,
+        "YOUR_PUBLIC_KEY"      // 🔴 replace
+      )
+      .then(
+        () => {
+          setIsSubmitting(false)
+          setSubmitted(true)
+          form.current.reset()
 
-    setIsSubmitting(false)
-    setSubmitted(true)
-
-    setTimeout(() => setSubmitted(false), 3000)
+          setTimeout(() => setSubmitted(false), 3000)
+        },
+        (error) => {
+          console.log("FAILED...", error.text)
+          setIsSubmitting(false)
+        }
+      )
   }
 
   return (
     <section id="contact" className="relative py-20 md:py-32" ref={ref}>
-      <div className="absolute top-0 left-1/4 w-[550px] h-[550px] bg-gradient-to-br from-primary/25 via-accent/15 to-transparent rounded-full blur-[140px]" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-accent/20 via-primary/12 to-transparent rounded-full blur-[135px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-gradient-to-r from-primary/8 to-accent/8 rounded-full blur-[170px]" />
-
       <div className="container mx-auto px-4 relative z-10">
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent text-balance text-center"
+          className="text-3xl md:text-5xl font-bold mb-12 text-center"
         >
-          {"Let's Work Together"}
+          Let's Work Together
         </motion.h2>
 
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
             <div>
               <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Have a project in mind or want to collaborate? {"I'd"} love to hear from you. Send me a message and{" "}
-                {"I'll"} respond as soon as possible.
+              <p className="text-muted-foreground">
+                Have a project in mind? Send me a message.
               </p>
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-lg bg-primary/10">
-                  <Mail className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">megaladevi2084@gmail.com</p>
-                </div>
+              <div className="flex gap-4">
+                <Mail /> <span>your@email.com</span>
               </div>
-
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-lg bg-primary/10">
-                  <Phone className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-medium">+91 93612 55171</p>
-                </div>
+              <div className="flex gap-4">
+                <Phone /> <span>+91 XXXXX XXXXX</span>
               </div>
-
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-lg bg-primary/10">
-                  <MapPin className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">Thevor,Salem</p>
-                </div>
+              <div className="flex gap-4">
+                <MapPin /> <span>Your Location</span>
               </div>
             </div>
           </motion.div>
 
+          {/* RIGHT SIDE FORM */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
+
               <div className="grid grid-cols-2 gap-4">
-                <Input type="text" placeholder="Your Name" required className="bg-secondary border-border" />
-                <Input type="email" placeholder="Your Email" required className="bg-secondary border-border" />
+                <Input name="user_name" type="text" placeholder="Your Name" required />
+                <Input name="user_email" type="email" placeholder="Your Email" required />
               </div>
-              <Input type="text" placeholder="Subject" required className="bg-secondary border-border" />
+
+              <Input name="subject" type="text" placeholder="Subject" required />
+
               <Textarea
+                name="message"
                 placeholder="Your Message"
-                required
                 rows={6}
-                className="bg-secondary border-border resize-none"
+                required
               />
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90"
-                disabled={isSubmitting}
-              >
+
+              <Button type="submit" disabled={isSubmitting} className="w-full">
                 {isSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
-                  </span>
+                  "Sending..."
                 ) : submitted ? (
-                  <span className="flex items-center gap-2">✓ Message Sent!</span>
+                  "✅ Message Sent!"
                 ) : (
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center justify-center gap-2">
                     <Send className="h-4 w-4" />
                     Send Message
                   </span>
                 )}
               </Button>
+
             </form>
           </motion.div>
+
         </div>
       </div>
     </section>
