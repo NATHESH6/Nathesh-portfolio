@@ -23,10 +23,10 @@ const projects = [
   },
 
  {
-    title: "Image Steganography using Modified SDSA Algorithm",
+    title: "Cyber Hacking Breach Detection & Prediction using XGBoost",
     description:
       "Advanced steganography system that hides data within images using the Spatially De-synchronization Steganography Algorithm for enhanced security and imperceptibility.",
-    tech: ["C#", "SDSA Algorithm", "Image Processing", "Cryptography"],
+    tech: ["HTML,CSS,JS,Python", "XG-boost Algorithm","Machine Learning"],
     image: "/steganography-security-encryption.jpg",
     github: "https://github.com/NATHESH6/IMAGE-STEGANOGRAPHY-USING-MODIFIED-SDSA-ALGORITHM",
   },
