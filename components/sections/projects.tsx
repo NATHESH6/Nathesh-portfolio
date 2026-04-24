@@ -21,6 +21,16 @@ const projects = [
     image: "/ai-phishing-detection-email-security.jpg",
     github: "https://github.com/NATHESH6/DEVELOP-AN-AI-SYSTEM-TO-IDENTIFY-AND-BLOCK-PHISHING-EMAILS",
   },
+
+ {
+    title: "Image Steganography using Modified SDSA Algorithm",
+    description:
+      "Advanced steganography system that hides data within images using the Spatially De-synchronization Steganography Algorithm for enhanced security and imperceptibility.",
+    tech: ["C#", "SDSA Algorithm", "Image Processing", "Cryptography"],
+    image: "/steganography-security-encryption.jpg",
+    github: "https://github.com/NATHESH6/IMAGE-STEGANOGRAPHY-USING-MODIFIED-SDSA-ALGORITHM",
+  },
+  
 ]
 
 export default function Projects() {
