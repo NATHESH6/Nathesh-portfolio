@@ -10,7 +10,7 @@ const education = [
     field: "Computer Science  And Engineering",
     institution: "Coimbatore Institute of Engineering and Technology",
     period: "2023 - 2026",
-    status: "Current phus",
+    status: "current pursuing",
     cgpa: "6.48",
     progress: 60,
     icon: GraduationCap,
