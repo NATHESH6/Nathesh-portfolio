@@ -48,6 +48,11 @@ const certificates = [
     date: "December 30th to January 30th 2025-2026 ",
     image: "/Screenshot 2026-02-17 112022.png",
   },
+  {
+    title: "Data Analyst",
+    issuer: "NoviTech R&D Private Limited",
+    date: "June 28th to July 2th 2026-2026 ",
+  },
    
 ]
 
