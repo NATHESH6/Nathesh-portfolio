@@ -10,7 +10,7 @@ const education = [
     field: "Computer Science  And Engineering",
     institution: "Coimbatore Institute of Engineering and Technology",
     period: "2023 - 2026",
-    status: "Completed",
+    status: "Current phus",
     cgpa: "6.48",
     progress: 60,
     icon: GraduationCap,
@@ -117,7 +117,7 @@ export default function Education() {
                                 ? "#ec4899"
                                 : "#f97316",
                       }}
-                    />
+                    />  
                   </div>
 
                   <motion.div
@@ -192,7 +192,7 @@ export default function Education() {
                               In Progress
                             </span>
                           </div>
-                          <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                         <!-- <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={isInView ? { width: `${item.progress}%` } : {}}
@@ -200,7 +200,7 @@ export default function Education() {
                               className="h-full rounded-full"
                               style={{ backgroundColor: item.color === "purple" ? "#a855f7" : "#06b6d4" }}
                             />
-                          </div>
+                          </div> -->
                         </div>
                       )}
                     </div>
