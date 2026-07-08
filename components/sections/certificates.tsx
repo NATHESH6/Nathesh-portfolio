@@ -48,19 +48,6 @@ const certificates = [
     date: "December 30th to January 30th 2025-2026 ",
     image: "/Screenshot 2026-02-17 112022.png",
   },
-  {
-    title: "Data Analyst",
-    issuer: "NoviTech R&D Private Limited",
-    date: "June 28th to July 2th 2026-2026 ",
-    image: "NATHESH P V Data Analyst.pdf"
-  },
-    {
-    title: "National Conference Contemporary Innovations In Engineering Technology & Management",
-    issuer: "Coimbatoren Institute of Engineering And Technology",
-    date: "2026",
-    image:"WhatsApp Image 2026-05-24 at 2.34.24 PM "
-  },
-   
 ]
 
 export default function Certificates() {
