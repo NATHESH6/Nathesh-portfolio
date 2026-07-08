@@ -52,6 +52,7 @@ const certificates = [
     title: "Data Analyst",
     issuer: "NoviTech R&D Private Limited",
     date: "June 28th to July 2th 2026-2026 ",
+    image: ""
   },
     {
     title: "National Conference Contemporary Innovations In Engineering Technology & Management",
