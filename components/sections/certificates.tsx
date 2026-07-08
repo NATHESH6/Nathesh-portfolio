@@ -58,7 +58,7 @@ const certificates = [
     title: "National Conference Contemporary Innovations In Engineering Technology & Management",
     issuer: "Coimbatoren Institute of Engineering And Technology",
     date: "2026",
-    image:" "
+    image:"WhatsApp Image 2026-05-24 at 2.34.24 PM "
   },
    
 ]
