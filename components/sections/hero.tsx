@@ -61,7 +61,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10"
           >
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-sm text-cyan-600 dark:text-cyan-400">Available for Internship</span>
+            <span className="text-sm text-cyan-600 dark:text-cyan-400">Available for Seeking Job </span>
           </motion.div>
             <p className="text-primary text-sm md:text-base font-mono">{"< Nathesh Venkateswaran />"}</p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance">
