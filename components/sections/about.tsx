@@ -81,9 +81,18 @@ export default function About() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
             <div className="relative z-10 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                To launch my journey as a Web Developer Intern, I aspire to contribute to the creation of efficient,
-                responsive, and user-friendly web applications. Additionally, I am eager to improve my skills in
-                contemporary development frameworks, programming languages, and effective software practices.
+                Hi everyone. My name is Nathesh. I recently graduated with a B.E. in Computer Science and Engineering from the Coimbatore Institute of Engineering and Technology.
+
+Throughout my academic journey, I have built strong hands-on experience in full-stack development and Machine Learning using Python.
+                During my third year, I developed an AI system to identify and block phishing emails using the XGBoost algorithm, handling both frontend and backend development. 
+                For my final year project, I led a team to build a 'Cyber Hacking Breach Prediction and Detection' system, also powered by XGBoost. I managed the frontend design, backend programming, and team leadership.
+                We proudly presented this research at the National Conference on Contemporary Innovations in Engineering, Technology, and Management (CIETM-2026).
+
+Following my graduation, I completed a 4-month Machine Learning internship at Grandtwin in Chennai, where I worked on an 'AI-Powered Predictive Maintenance System for Industrial Equipment'.
+
+My technical foundation started during my Diploma at Kongu Polytechnic College in Erode. 
+                For our final project there, I served as the team leader and frontend designer for an 'Image Steganography using Modified SASD Algorithm' project built with C#.
+                My diploma years helped me build self-learning skills in HTML, CSS, Python, MySQL, and computer hardware. Over my four years in engineering, I have significantly advanced my programming expertise and overall technical skills.
               </p>
             </div>
           </motion.div>
