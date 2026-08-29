@@ -80,7 +80,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">nathesh1305@gmail.com</p>
+                  <p className="font-medium">megaladevi2084@gmail.com</p>
                 </div>
               </div>
 
