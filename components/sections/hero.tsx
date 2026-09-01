@@ -23,7 +23,7 @@ export default function Hero() {
   const downloadResume = () => {
     const link = document.createElement("a")
     link.href = "/NATHESH_PV_Full-Stack(1).pdf"
-    link.download = "NATHESH_PV_Full-stack_RESUM.pdf"
+    link.download = "NATHESH_PV_RESUM.pdf"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
