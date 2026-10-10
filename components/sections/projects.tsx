@@ -21,7 +21,14 @@ const projects = [
     image: "/ai-phishing-detection-email-security.jpg",
     github: "https://github.com/NATHESH6/DEVELOP-AN-AI-SYSTEM-TO-IDENTIFY-AND-BLOCK-PHISHING-EMAILS",
   },
-
+  {
+    title: "AI-Powered Predictive Maintenance System for Industrial Equipment",
+    description:
+      "An AI-powered Remaining Useful Life (RUL) prediction system for industrial equipment, built with Gradient Boosting Regression and a sleek Streamlit dashboard.",
+    tech: ["Python", "Streamlit", "HTML", "CSS", "ML", "XGBoost"],
+    image: "/ai-phishing-detection-email-security.jpg",
+    github: "https://github.com/NATHESH6/AI-Powered-Predictive-Maintenance-System-for-Industrial-Equipment",
+  },
 
   
 ]
