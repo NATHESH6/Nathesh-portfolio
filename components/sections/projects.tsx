@@ -26,7 +26,7 @@ const projects = [
     description:
       "An AI-powered Remaining Useful Life (RUL) prediction system for industrial equipment, built with Gradient Boosting Regression and a sleek Streamlit dashboard.",
     tech: ["Python", "Streamlit", "HTML", "CSS", "ML", "XGBoost"],
-    image: "/AI-Powered",
+    image: "/AI-Powred",
     github: "https://github.com/NATHESH6/AI-Powered-Predictive-Maintenance-System-for-Industrial-Equipment",
   },
 
