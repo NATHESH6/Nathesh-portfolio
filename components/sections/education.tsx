@@ -30,7 +30,7 @@ const education = [
     degree: "Secondary School (SSLC)",
     field: "Secondary Education",
     institution: "Sri Sakthi Supreme Ideal Vikas Matric HR Sec School",
-    period: "Completed 2020",
+    period: "2019 - 2020",
     status: "Completed",
     percentage: "62.8%",
     icon: BookOpen,
