@@ -5,6 +5,7 @@ import About from "@/components/sections/about"
 import Education from "@/components/sections/education"
 import Skills from "@/components/sections/skills"
 import Projects from "@/components/sections/projects"
+import Internship from "@/components/sections/internship"
 import Certificates from "@/components/sections/certificates"
 import Contact from "@/components/sections/contact"
 import Navigation from "@/components/navigation"
@@ -23,6 +24,7 @@ export default function Home() {
         <Education />
         <Skills />
         <Projects />
+        <Internship />
         <Certificates />
         <Contact />
       </div>

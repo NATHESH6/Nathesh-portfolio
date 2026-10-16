@@ -4,7 +4,20 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { GraduationCap, Award, BookOpen } from "lucide-react"
 
-const education = [
+interface EducationItem {
+  degree: string
+  field: string
+  institution: string
+  period: string
+  status: string
+  cgpa?: string
+  percentage?: string
+  progress?: number
+  icon: any
+  color: string
+}
+
+const education: EducationItem[] = [
   {
     degree: "Bachelor of Engineering",
     field: "Computer Science  And Engineering",
