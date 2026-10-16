@@ -41,7 +41,7 @@ export default function Internship() {
     },
   ]
 
-  const technologies = ["Python", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib"]
+  const technologies = ["Python", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib","Heatmap","Seaborn","Streamlit"]
 
   return (
     <section id="internship" className="relative py-20 md:py-32 overflow-hidden" ref={ref}>
