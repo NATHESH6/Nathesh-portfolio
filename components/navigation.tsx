@@ -13,6 +13,7 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Internship", href: "#internship" },
+  { label: "Research", href: "#research" },
   { label: "Certificates", href: "#certificates" },
   { label: "Contact", href: "#contact" },
 ]
@@ -27,11 +28,11 @@ export default function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
-      
+
       // Update active section based on scroll position
       const sections = navItems.map(item => item.href.substring(1))
       const scrollPosition = window.scrollY + 100
-      
+
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
@@ -43,10 +44,10 @@ export default function Navigation() {
         }
       }
     }
-    
+
     window.addEventListener("scroll", handleScroll)
     handleScroll() // Initial check
-    
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -56,7 +57,7 @@ export default function Navigation() {
       const navHeight = navRef.current?.offsetHeight || 0
       const elementPosition = element.getBoundingClientRect().top + window.scrollY
       const offsetPosition = elementPosition - navHeight
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
@@ -69,7 +70,7 @@ export default function Navigation() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        menuRef.current && 
+        menuRef.current &&
         !menuRef.current.contains(event.target as Node) &&
         !(event.target as Element).closest('button[aria-label*="menu"]')
       ) {
@@ -80,7 +81,7 @@ export default function Navigation() {
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside)
     }
-    
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
@@ -93,7 +94,7 @@ export default function Navigation() {
     } else {
       document.body.style.overflow = "unset"
     }
-    
+
     return () => {
       document.body.style.overflow = "unset"
     }
@@ -104,9 +105,8 @@ export default function Navigation() {
       ref={navRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-xl border-b ${
-        scrolled ? "border-border shadow-lg" : "border-border/50"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-xl border-b ${scrolled ? "border-border shadow-lg" : "border-border/50"
+        }`}
     >
       <div className="container mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
         <motion.div
@@ -127,16 +127,14 @@ export default function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               onClick={() => scrollToSection(item.href)}
-              className={`text-sm transition-colors relative group px-1 py-2 ${
-                activeSection === item.href 
-                  ? "text-foreground font-medium" 
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`text-sm transition-colors relative group px-1 py-2 ${activeSection === item.href
+                ? "text-foreground font-medium"
+                : "text-muted-foreground hover:text-foreground"
+                }`}
             >
               {item.label}
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all ${
-                activeSection === item.href ? "w-full" : "w-0 group-hover:w-full"
-              }`} />
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all ${activeSection === item.href ? "w-full" : "w-0 group-hover:w-full"
+                }`} />
             </motion.button>
           ))}
           <ThemeToggle />
@@ -145,9 +143,9 @@ export default function Navigation() {
         {/* Mobile Menu Buttons */}
         <div className="flex md:hidden items-center gap-3">
           <ThemeToggle />
-          <Button 
-            variant="ghost" 
-            size="icon" 
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => setIsOpen(!isOpen)}
             className="h-9 w-9"
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -169,7 +167,7 @@ export default function Navigation() {
               className="fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden z-40"
               onClick={() => setIsOpen(false)}
             />
-            
+
             {/* Mobile menu - placed above backdrop */}
             <motion.div
               ref={menuRef}
@@ -183,11 +181,10 @@ export default function Navigation() {
                   <motion.button
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
-                    className={`text-left transition-colors py-3 px-2 rounded-lg text-base ${
-                      activeSection === item.href
-                        ? "bg-primary/10 text-primary font-medium"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                    }`}
+                    className={`text-left transition-colors py-3 px-2 rounded-lg text-base ${activeSection === item.href
+                      ? "bg-primary/10 text-primary font-medium"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                      }`}
                     whileTap={{ scale: 0.98 }}
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
