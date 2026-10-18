@@ -46,7 +46,7 @@ export default function Research() {
       title: "Academic Achievements Projects",
       description: [
         "Cyber Hacking Breach Prediction and Detection using Machine Learning and ",
-        "AI System to Identify and Block Phishing Emails"
+        "Machine Learning System to Identify and Block Phishing Emails"
       ]
     },
     {
@@ -272,9 +272,19 @@ export default function Research() {
                     <h4 className="text-base font-bold text-foreground group-hover:text-purple-300 transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                      {item.description}
-                    </p>
+                    {Array.isArray(item.description) ? (
+                      <div className="space-y-1 mt-1">
+                        {item.description.map((desc, i) => (
+                          <p key={i} className="text-sm text-muted-foreground leading-relaxed">
+                            {desc}
+                          </p>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                        {item.description}
+                      </p>
+                    )}
                   </div>
                 </motion.div>
               )
