@@ -5,6 +5,7 @@ import About from "@/components/sections/about"
 import Education from "@/components/sections/education"
 import Skills from "@/components/sections/skills"
 import Projects from "@/components/sections/projects"
+import ChatbotServices from "@/components/sections/chatbot-services"
 import Internship from "@/components/sections/internship"
 import Research from "@/components/sections/research"
 import Certificates from "@/components/sections/certificates"
@@ -12,7 +13,7 @@ import Contact from "@/components/sections/contact"
 import Navigation from "@/components/navigation"
 import ParticlesBackground from "@/components/particles-background"
 import BackToTop from "@/components/back-to-top"
-
+import ChatbotWidget from "@/components/chatbot/chatbot-widget"
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <Education />
         <Skills />
         <Projects />
+        <ChatbotServices />
         <Internship />
         <Research />
         <Certificates />
@@ -33,6 +35,7 @@ export default function Home() {
       </div>
 
       <BackToTop />
+      <ChatbotWidget />
     </main>
   )
 }

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Sparkles, Bot } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
 
@@ -12,6 +12,7 @@ const navItems = [
   { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+
   { label: "Internship", href: "#internship" },
   { label: "Research", href: "#research" },
   { label: "Certificates", href: "#certificates" },
@@ -137,6 +138,22 @@ export default function Navigation() {
                 }`} />
             </motion.button>
           ))}
+
+          {/* Ask AI Chatbot Trigger */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                window.dispatchEvent(new CustomEvent("open-portfolio-chat"))
+              }
+            }}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-cyan-500/15 to-primary/15 hover:from-cyan-500/25 hover:to-primary/25 border border-cyan-500/40 text-cyan-500 dark:text-cyan-300 shadow-[0_0_12px_rgba(6,182,212,0.15)] transition-all cursor-pointer"
+            title="Open AI Question-Response Chatbot"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+            <span>Ask AI</span>
+          </motion.button>
           <ThemeToggle />
         </div>
 
@@ -194,6 +211,22 @@ export default function Navigation() {
                     {item.label}
                   </motion.button>
                 ))}
+
+                {/* Mobile Ask AI Button */}
+                <motion.button
+                  onClick={() => {
+                    setIsOpen(false)
+                    if (typeof window !== "undefined") {
+                      window.dispatchEvent(new CustomEvent("open-portfolio-chat"))
+                    }
+                  }}
+                  className="mt-2 flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-gradient-to-r from-cyan-500/20 to-primary/20 border border-cyan-500/40 text-cyan-500 dark:text-cyan-300 font-semibold text-sm shadow-sm"
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Bot className="w-4 h-4 text-cyan-400" />
+                  <span>Ask AI Assistant (Q&A)</span>
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-300 animate-pulse" />
+                </motion.button>
               </div>
             </motion.div>
           </>

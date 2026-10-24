@@ -58,7 +58,7 @@ export default function BackToTop() {
           transition={{ duration: 0.25, ease: "easeOut" }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.92 }}
-          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 w-12 h-12 rounded-full flex items-center justify-center bg-background/85 dark:bg-[#070e1b]/90 backdrop-blur-md border border-cyan-500/30 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all duration-300 group cursor-pointer"
+          className="fixed bottom-24 right-6 md:bottom-28 md:right-8 z-40 w-12 h-12 rounded-full flex items-center justify-center bg-background/85 dark:bg-[#070e1b]/90 backdrop-blur-md border border-cyan-500/30 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all duration-300 group cursor-pointer"
           aria-label="Back to top"
           title={`Back to top (${Math.round(progress)}%)`}
         >
