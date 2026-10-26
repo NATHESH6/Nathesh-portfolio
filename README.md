@@ -257,7 +257,6 @@ Your portfolio will be built and live with free HTTPS and global edge CDN distri
 - 🐙 **GitHub**: [@NATHESH6](https://github.com/NATHESH6/)
 - 💼 **LinkedIn**: [Nathesh Venkateswaran](https://www.linkedin.com/in/nathesh-venkateswaran-0b7679324/)
 - 📧 **Email**: [megaladevi2084@gmail.com](mailto:megaladevi2084@gmail.com)
-- 📱 **Phone**: [+91 93612 55171](tel:+919361255171)
 - 📍 **Location**: Tamil Nadu, India
 
 ---
