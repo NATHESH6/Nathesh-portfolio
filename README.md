@@ -246,18 +246,6 @@ The easiest and recommended way to deploy this Next.js portfolio is with the [Ve
 
 Your portfolio will be built and live with free HTTPS and global edge CDN distribution in less than 2 minutes.
 
----
-
-## 👨‍💻 Author & Connect
-
-**Nathesh**  
-*Web Developer & Machine Learning Enthusiast*
-
-- 🌐 **Portfolio**: [Live Website](https://nathesh-portfolio.vercel.app) *(or your deployed URL)*
-- 🐙 **GitHub**: [@NATHESH6](https://github.com/NATHESH6/)
-- 💼 **LinkedIn**: [Nathesh Venkateswaran](https://www.linkedin.com/in/nathesh-venkateswaran-0b7679324/)
-- 📧 **Email**: [megaladevi2084@gmail.com](mailto:megaladevi2084@gmail.com)
-  
 
 ---
 
